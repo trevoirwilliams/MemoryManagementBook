@@ -1,5 +1,14 @@
 public class Person
 {
+    // Constructor method
+    public Person(string firstName, string lastName, DateOnly dateOfBirth)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        DateOfBirth = dateOfBirth;
+        _age = DateTime.Now.Year - dateOfBirth.Year;
+    }
+
     // Attributes - Properties and fields
     public string FirstName { get; set; } // property - public access
     public string LastName { get; set; }
@@ -9,6 +18,6 @@ public class Person
     // Methods
     public double GetAge()
     {
-        return DateTime.Now.Year - DateOfBirth.Year;
+        return _age;
     }
 }
