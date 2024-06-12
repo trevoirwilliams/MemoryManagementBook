@@ -1,4 +1,6 @@
-﻿////static unsafe void UnsafeMethod()
+﻿using System.Runtime.InteropServices;
+
+////static unsafe void UnsafeMethod()
 ////{
 ////    int num = 10;
 ////    int* p = &num;
@@ -156,14 +158,158 @@
 //    ProcessArray(array, array.Length, callbackDelegate);
 
 // Define the unmanaged function with the MarshalAs attribute
-using System.Runtime.InteropServices;
+//using System.Runtime.InteropServices;
 
-[DllImport("example.dll", CallingConvention = CallingConvention.Cdecl)]
-static extern void UnmanagedFunction(
-    [MarshalAs(UnmanagedType.LPStr)] string str);
+//[DllImport("example.dll", CallingConvention = CallingConvention.Cdecl)]
+//static extern void UnmanagedFunction(
+//    [MarshalAs(UnmanagedType.LPStr)] string str);
 
 
-string managedString = "Hello, World!";
+//string managedString = "Hello, World!";
 
-// Call the unmanaged function
-UnmanagedFunction(managedString);
+//// Call the unmanaged function
+//UnmanagedFunction(managedString);
+
+
+// Import the CreateFile function from kernel32.dll
+//[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+//static extern SafeFileHandle CreateFile(
+//        string lpFileName,
+//        uint dwDesiredAccess,
+//        uint dwShareMode,
+//        IntPtr lpSecurityAttributes,
+//        uint dwCreationDisposition,
+//        uint dwFlagsAndAttributes,
+//        IntPtr hTemplateFile);
+
+//const uint GENERIC_READ = 0x80000000;
+//const uint OPEN_EXISTING = 3;
+
+//// Create a file handle
+//SafeFileHandle fileHandle = CreateFile(
+//    "example.txt",
+//    GENERIC_READ,
+//    0,
+//    IntPtr.Zero,
+//    OPEN_EXISTING,
+//    0,
+//    IntPtr.Zero);
+
+//if (!fileHandle.IsInvalid)
+//{
+//    using (FileStream fs = new FileStream(fileHandle, FileAccess.Read))
+//    {
+//        using (StreamReader reader = new StreamReader(fs))
+//        {
+//            string content = reader.ReadToEnd();
+//            Console.WriteLine(content);
+//        }
+//    }
+//}
+//else
+//{
+//    Console.WriteLine("Failed to open file.");
+//}
+
+
+
+
+[DllImport("SomeUnmanagedLibrary.dll")]
+static extern SafeExampleHandle GetExampleHandle();
+
+SafeExampleHandle handle = GetExampleHandle();
+if (!handle.IsInvalid)
+{
+    // Use the handle
+    Console.WriteLine("Handle acquired and valid.");
+
+    // The handle will be released when it goes out of scope and is disposed
+}
+else
+{
+    Console.WriteLine("Failed to acquire handle.");
+}
+
+public class SafeExampleHandle : SafeHandle
+{
+    // Constructor
+    public SafeExampleHandle() : base(IntPtr.Zero, true) { }
+
+    // Override IsInvalid
+    public override bool IsInvalid
+    {
+        get { return this.handle == IntPtr.Zero; }
+    }
+
+    // Override ReleaseHandle
+    protected override bool ReleaseHandle()
+    {
+        // Perform necessary cleanup of the handle
+        // For example, if the handle was allocated using Marshal.AllocHGlobal:
+        Marshal.FreeHGlobal(this.handle);
+        return true;
+    }
+}
+//public struct ComplexData
+//{
+//    public int IntData;
+//    public string StringData;
+//}
+
+//public class ComplexDataMarshaler : ICustomMarshaler
+//{
+//    public object MarshalNativeToManaged(IntPtr pNativeData)
+//    {
+//        // Convert native data to managed ComplexData
+//        ComplexData data = new ComplexData();
+//        data.IntData = Marshal.ReadInt32(pNativeData);
+//        IntPtr stringPtr = Marshal.ReadIntPtr(pNativeData, IntPtr.Size);
+//        data.StringData = Marshal.PtrToStringAnsi(stringPtr);
+//        return data;
+//    }
+
+//    public IntPtr MarshalManagedToNative(object ManagedObj)
+//    {
+//        // Convert managed ComplexData to native data
+//        if (!(ManagedObj is ComplexData))
+//            throw new ArgumentException("ManagedObj is not of type ComplexData");
+
+//        ComplexData data = (ComplexData)ManagedObj;
+//        IntPtr pNativeData = Marshal.AllocHGlobal(IntPtr.Size * 2);
+//        Marshal.WriteInt32(pNativeData, data.IntData);
+//        IntPtr stringPtr = Marshal.StringToHGlobalAnsi(data.StringData);
+//        Marshal.WriteIntPtr(pNativeData, IntPtr.Size, stringPtr);
+//        return pNativeData;
+//    }
+
+//    public void CleanUpNativeData(IntPtr pNativeData)
+//    {
+//        // Clean up unmanaged string
+//        IntPtr stringPtr = Marshal.ReadIntPtr(pNativeData, IntPtr.Size);
+//        Marshal.FreeHGlobal(stringPtr);
+//        Marshal.FreeHGlobal(pNativeData);
+//    }
+
+//    public int GetNativeDataSize()
+//    {
+//        return IntPtr.Size * 2;
+//    }
+
+//    public static ICustomMarshaler GetInstance(string cookie)
+//    {
+//        return new ComplexDataMarshaler();
+//    }
+
+//    public void CleanUpManagedData(object ManagedObj)
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
+
+//// Using the custom marshaler
+//[DllImport("SomeUnmanagedLibrary.dll")]
+//public static extern void ProcessComplexData([MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ComplexDataMarshaler))] ComplexData data);
+
+
+//ComplexData data = new ComplexData { IntData = 42, StringData = "Hello, World!" };
+//ProcessComplexData(data);
