@@ -20,9 +20,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter07", "Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter05", "ConsoleApp.Chapter05\ConsoleApp.Chapter05.csproj", "{EC3E44CA-1CC9-4A38-9831-25236DB69D4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter06.MemoryLeakApp", "ConsoleApp.Chapter06.MemoryLeakApp\ConsoleApp.Chapter06.MemoryLeakApp.csproj", "{F7048C25-7092-401F-A208-788170FD7472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter06.MemoryLeakApp", "ConsoleApp.Chapter06.MemoryLeakApp\ConsoleApp.Chapter06.MemoryLeakApp.csproj", "{F7048C25-7092-401F-A208-788170FD7472}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter06.MemoryLeakApp.Tests", "ConsoleApp.Chapter06.MemoryLeakApp.Tests\ConsoleApp.Chapter06.MemoryLeakApp.Tests.csproj", "{672AFBC9-0D96-42B7-89B6-B766F9DB8A2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter06.MemoryLeakApp.Tests", "ConsoleApp.Chapter06.MemoryLeakApp.Tests\ConsoleApp.Chapter06.MemoryLeakApp.Tests.csproj", "{672AFBC9-0D96-42B7-89B6-B766F9DB8A2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTenant.Api.Chapter08", "MultiTenant.Api.Chapter08\MultiTenant.Api.Chapter08.csproj", "{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,10 +64,10 @@ Global
 		{672AFBC9-0D96-42B7-89B6-B766F9DB8A2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{672AFBC9-0D96-42B7-89B6-B766F9DB8A2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{672AFBC9-0D96-42B7-89B6-B766F9DB8A2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4CEE6F99-02E7-48C8-8B19-55912014E671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4CEE6F99-02E7-48C8-8B19-55912014E671}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4CEE6F99-02E7-48C8-8B19-55912014E671}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4CEE6F99-02E7-48C8-8B19-55912014E671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
