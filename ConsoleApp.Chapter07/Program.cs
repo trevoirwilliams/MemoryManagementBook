@@ -214,42 +214,22 @@
 
 
 
-[DllImport("SomeUnmanagedLibrary.dll")]
-static extern SafeExampleHandle GetExampleHandle();
+//[DllImport("SomeUnmanagedLibrary.dll")]
+//static extern SafeExampleHandle GetExampleHandle();
 
-SafeExampleHandle handle = GetExampleHandle();
-if (!handle.IsInvalid)
-{
-    // Use the handle
-    Console.WriteLine("Handle acquired and valid.");
+//SafeExampleHandle handle = GetExampleHandle();
+//if (!handle.IsInvalid)
+//{
+//    // Use the handle
+//    Console.WriteLine("Handle acquired and valid.");
 
-    // The handle will be released when it goes out of scope and is disposed
-}
-else
-{
-    Console.WriteLine("Failed to acquire handle.");
-}
+//    // The handle will be released when it goes out of scope and is disposed
+//}
+//else
+//{
+//    Console.WriteLine("Failed to acquire handle.");
+//}
 
-public class SafeExampleHandle : SafeHandle
-{
-    // Constructor
-    public SafeExampleHandle() : base(IntPtr.Zero, true) { }
-
-    // Override IsInvalid
-    public override bool IsInvalid
-    {
-        get { return this.handle == IntPtr.Zero; }
-    }
-
-    // Override ReleaseHandle
-    protected override bool ReleaseHandle()
-    {
-        // Perform necessary cleanup of the handle
-        // For example, if the handle was allocated using Marshal.AllocHGlobal:
-        Marshal.FreeHGlobal(this.handle);
-        return true;
-    }
-}
 //public struct ComplexData
 //{
 //    public int IntData;
@@ -313,3 +293,53 @@ public class SafeExampleHandle : SafeHandle
 
 //ComplexData data = new ComplexData { IntData = 42, StringData = "Hello, World!" };
 //ProcessComplexData(data);
+
+using System;
+using System.Runtime.InteropServices;
+
+
+namespace ConsoleApp.Chapter07;
+
+
+
+static class Program
+{
+    // Define a simple structure
+    [StructLayout(LayoutKind.Sequential)]
+    public struct MyStruct
+    {
+        public int x;
+        public double y;
+    }
+
+    // Simulated unmanaged function 
+    [DllImport("NativeLibrary.dll", CallingConvention = CallingConvention.Cdecl)]
+    public static extern void UnmanagedFunction(IntPtr ptr);
+
+    static void Main()
+    {
+        MyStruct myStruct = new MyStruct
+        {
+            x = 42,
+            y = 3.14
+        };
+
+        // Allocate unmanaged memory for the structure
+        IntPtr ptr = Marshal.AllocHGlobal(Marshal.SizeOf(myStruct));
+
+        try
+        {
+            // Convert the structure to a pointer
+            Marshal.StructureToPtr(myStruct, ptr, false);
+    
+            // Call the unmanaged function with the pointer
+            UnmanagedFunction(ptr);
+        }
+        finally
+        {
+            // Free the unmanaged memory
+            Marshal.FreeHGlobal(ptr);
+        }
+
+    }
+}
