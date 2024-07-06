@@ -1,7 +1,7 @@
 using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace WinFormsApp.Console08;
+namespace WinFormsApp.Chapter08;
 
 public partial class MainForm : Form
 {

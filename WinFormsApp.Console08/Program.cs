@@ -1,4 +1,4 @@
-namespace WinFormsApp.Console08
+namespace WinFormsApp.Chapter08
 {
     internal static class Program
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace WinFormsApp.Console08;
+namespace WinFormsApp.Chapter08;
 
 public class DatabaseManager : IDisposable
 {

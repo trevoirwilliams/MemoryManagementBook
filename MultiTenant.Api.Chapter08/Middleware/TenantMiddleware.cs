@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 using MultiTenant.Api.Chapter08.Data;
-using System.Threading.Tasks;
 
 namespace MultiTenant.Api.Chapter08.Middleware;
 

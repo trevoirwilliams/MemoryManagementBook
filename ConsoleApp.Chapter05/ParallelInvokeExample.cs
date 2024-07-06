@@ -2,7 +2,7 @@
 
 public class ParallelInvokeExample
 {
-    public static void Main()
+    public void Demo()
     {
         Parallel.Invoke(
             () => Console.WriteLine("Task 1"),

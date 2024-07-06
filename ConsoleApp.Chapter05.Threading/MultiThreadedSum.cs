@@ -1,6 +1,6 @@
 ﻿public class MultiThreadedSum
 {
-    public static void Main()
+    public void Main()
     {
         int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         int numberOfThreads = 4; // Be wise when choosing this number. 
@@ -8,7 +8,7 @@
         Console.WriteLine($"The sum of the array is: {sum}");
     }
 
-    private static long SumArrayMultiThreaded(int[] numbers, int numberOfThreads)
+    private long SumArrayMultiThreaded(int[] numbers, int numberOfThreads)
     {
         int lengthPerThread = numbers.Length / numberOfThreads;
         long totalSum = 0;

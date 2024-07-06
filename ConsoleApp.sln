@@ -26,7 +26,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter06.Memory
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MultiTenant.Api.Chapter08", "MultiTenant.Api.Chapter08\MultiTenant.Api.Chapter08.csproj", "{4843C8C2-CE19-4A8D-B627-2DB9B5B216AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp.Console08", "WinFormsApp.Console08\WinFormsApp.Console08.csproj", "{D809782C-714B-438D-A0D0-79FD1D6B5BEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp.Chapter08", "WinFormsApp.Console08\WinFormsApp.Chapter08.csproj", "{D809782C-714B-438D-A0D0-79FD1D6B5BEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter05.AsyncExample", "ConsoleApp.Chapter05.AsyncExample\ConsoleApp.Chapter05.AsyncExample.csproj", "{35DB1F1D-2E01-4C9C-AA50-B1F1BC459DCB}"
 EndProject
@@ -35,6 +35,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter05.Concurrency", "ConsoleApp.Chapter05.Concurrency\ConsoleApp.Chapter05.Concurrency.csproj", "{0B73E86A-9F94-416B-90B8-D5B334E5675A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter05.Threading", "ConsoleApp.Chapter05.Threading\ConsoleApp.Chapter05.Threading.csproj", "{04BB3A58-10B9-4767-9C2E-0C98F9D668A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp.Chapter08", "WpfApp.Chapter08\WpfApp.Chapter08.csproj", "{46340D7A-EE6F-4BD0-8BBC-6946FA322D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Api.Chapter08", "Caching.Api.Chapter08\Caching.Api.Chapter08.csproj", "{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -98,6 +102,14 @@ Global
 		{04BB3A58-10B9-4767-9C2E-0C98F9D668A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04BB3A58-10B9-4767-9C2E-0C98F9D668A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04BB3A58-10B9-4767-9C2E-0C98F9D668A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46340D7A-EE6F-4BD0-8BBC-6946FA322D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46340D7A-EE6F-4BD0-8BBC-6946FA322D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46340D7A-EE6F-4BD0-8BBC-6946FA322D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46340D7A-EE6F-4BD0-8BBC-6946FA322D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

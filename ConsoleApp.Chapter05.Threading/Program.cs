@@ -6,7 +6,9 @@ public class Program
 {
     public static void Main()
     {
-        SingleThreadedSum.Main();
-        MultiThreadedSum.Main();
+        var singleThreadedSum = new SingleThreadedSum();
+        var multiThreadedSum = new MultiThreadedSum();
+        singleThreadedSum.Main();
+        multiThreadedSum.Main();
     }
 }
