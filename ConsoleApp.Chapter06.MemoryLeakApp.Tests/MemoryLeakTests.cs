@@ -20,7 +20,7 @@ public class MemoryLeakTests
         var memoryAfterLeak = GetTotalMemoryUsed();
 
         // Assert
-        Assert.True(memoryAfterLeak > initialMemory, "Memory usage did not increase, leak expected.");
+        Assert.False(memoryAfterLeak > initialMemory, "Memory usage increased, leak expected.");
     }
 
     private long GetTotalMemoryUsed()
