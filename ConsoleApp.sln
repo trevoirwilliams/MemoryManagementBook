@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter02", "ConsoleApp.Chapter02\ConsoleApp.Chapter02.csproj", "{2CD02A11-2D3C-4BFA-B7A4-BCBEE9251C1F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter03", "ConsoleApp.Chapter03\ConsoleApp.Chapter03.csproj", "{DF44793D-30C7-49E5-9BBF-7259C8DA6D7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter03.Benchmarks", "ConsoleApp.Chapter03\ConsoleApp.Chapter03.Benchmarks.csproj", "{DF44793D-30C7-49E5-9BBF-7259C8DA6D7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4EF691A1-5DF7-43A0-ABE0-39F7CC91E498}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Chapter04", "API.Chapter04\API.Chapter04.csproj", "{B00366BB-1830-4998-AD74-79CF8FC7F685}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter06", "ConsoleApp.Chapter06\ConsoleApp.Chapter06.csproj", "{867FCB6D-E60A-45BB-A802-19FAA055883F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter06.EventSource", "ConsoleApp.Chapter06\ConsoleApp.Chapter06.EventSource.csproj", "{867FCB6D-E60A-45BB-A802-19FAA055883F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp.Chapter07", "ConsoleApp.Chapter07\ConsoleApp.Chapter07.csproj", "{81B29F10-61B8-475D-8805-0A24B52059C3}"
 EndProject
@@ -41,6 +41,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Caching.Api.Chapter08", "Caching.Api.Chapter08\Caching.Api.Chapter08.csproj", "{8EC7AEE2-433C-4EEE-8250-B4AEEA3DCE6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter03.SmallObjectManager", "ConsoleApp.Chapter03.SmallObjectManager\ConsoleApp.Chapter03.SmallObjectManager.csproj", "{EDBB4374-4304-46E3-A529-0441C50D295B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Chapter06.EventPubSub", "ConsoleApp.Chapter06.EventPubSub\ConsoleApp.Chapter06.EventPubSub.csproj", "{34256654-C2B9-4AEC-9479-4F43A6F1C4E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -116,6 +118,10 @@ Global
 		{EDBB4374-4304-46E3-A529-0441C50D295B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDBB4374-4304-46E3-A529-0441C50D295B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDBB4374-4304-46E3-A529-0441C50D295B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34256654-C2B9-4AEC-9479-4F43A6F1C4E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34256654-C2B9-4AEC-9479-4F43A6F1C4E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34256654-C2B9-4AEC-9479-4F43A6F1C4E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34256654-C2B9-4AEC-9479-4F43A6F1C4E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

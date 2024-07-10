@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace ConsoleApp.Chapter03;
-
 public class ListBenchmark
 {
     private const int NumberOfElements = 10000;

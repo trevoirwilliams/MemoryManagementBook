@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace ConsoleApp.Chapter03;
-
 
 [MemoryDiagnoser]
 public class ObjectPoolingBenchmarkExample

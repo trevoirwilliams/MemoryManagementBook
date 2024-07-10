@@ -2,8 +2,6 @@
 using System.Collections.Concurrent;
 using System.Collections.Immutable;
 
-namespace ConsoleApp.Chapter03;
-
 public class CollectionBenchmark
 {
     private const int N = 1000;

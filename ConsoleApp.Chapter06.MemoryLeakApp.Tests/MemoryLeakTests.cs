@@ -1,4 +1,4 @@
-namespace ConsoleApp.Chapter06.MemoryLeakApp.Tests;
+namespace MemoryLeakTests;
 
 public class MemoryLeakTests
 {

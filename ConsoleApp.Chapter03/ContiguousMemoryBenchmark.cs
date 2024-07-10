@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace ConsoleApp.Chapter03;
-
 public class ContiguousMemoryBenchmark
 {
     private int[] numbers;
