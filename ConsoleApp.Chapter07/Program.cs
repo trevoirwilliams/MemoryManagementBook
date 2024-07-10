@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 ////static unsafe void UnsafeMethod()
 ////{
@@ -18,28 +19,25 @@
 //    public int Y;
 //}
 
-
 //unsafe
 //{
 //    Point point = new Point { X = 10, Y = 20 };
 //    Point* ptr = &point;
+//     // Using the -> operator
+//    Console.WriteLine(ptr->X); // Outputs 10
+//    Console.WriteLine(ptr->Y); // Outputs 20
 
-//    ValidateAndPrintPointer(ptr);
+//    // Using the * and . operators
+//    Console.WriteLine((*ptr).X); // Outputs 10
+//    Console.WriteLine((*ptr).Y); // Outputs 20
 
-//    Point* nullPtr = null;
-//    ValidateAndPrintPointer(nullPtr);
-
-//    public static unsafe void ValidateAndPrintPointer(Point* ptr)
+//    if (ptr == null)
 //    {
-//        if (ptr == null)
-//        {
-//            Console.WriteLine("Pointer is null. Cannot dereference.");
-//        }
-//        else
-//        {
-//            Console.WriteLine("Pointer is valid.");
-//            Console.WriteLine($"X: {ptr->X}, Y: {ptr->Y}");
-//        }
+//      Console.WriteLine("Pointer is null. Cannot dereference.");
+//    }
+//    else
+//    {
+//      // Perform pointer related operations
 //    }
 //}
 
@@ -294,8 +292,6 @@
 //ComplexData data = new ComplexData { IntData = 42, StringData = "Hello, World!" };
 //ProcessComplexData(data);
 
-using System;
-using System.Runtime.InteropServices;
 
 
 namespace ConsoleApp.Chapter07;
