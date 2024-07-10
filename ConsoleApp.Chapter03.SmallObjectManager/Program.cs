@@ -1,4 +1,6 @@
-﻿public class SmallObjectManager
+﻿namespace ConsoleApp.Chapter03.SmallObjectManager;
+
+public class SmallObjectManager
 {
     // Each array size is set to a value that won't be allocated on the LOH.
     private const int MaxArraySize = 20_000; // size * sizeof(int) < 85,000 bytes for int
@@ -31,6 +33,31 @@
             {
                 yield return item;
             }
+        }
+    }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        SmallObjectManager manager = new SmallObjectManager();
+        // Example: Adding a large amount of data in chunks
+        manager.AddData(GenerateLargeDataSet());
+        // Retrieve and process the data
+        foreach (var item in manager.GetData())
+        {
+            // Process each item
+            Console.WriteLine(item);
+        }
+    }
+    // Simulate generating a large set of data
+    private static IEnumerable<int> GenerateLargeDataSet()
+    {
+        const int largeSize = 100_000;
+        for (int i = 0; i < largeSize; i++)
+        {
+            yield return i;
         }
     }
 }
